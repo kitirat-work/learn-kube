@@ -1,0 +1,15 @@
+apiVersion: v1 # version of the API we want to use
+kind: Pod # kind of object we want to create
+metadata:
+  name: client-pod # name of the object
+  labels:
+    component: web # label to identify the object
+spec:
+  containers:
+    - name: client # name of the container
+      image: stephengrider/multi-client # image to use
+      ports:
+        - containerPort: 3000 # port to expose from the container
+      env:
+        - name: TEST_POD # environment variable to set
+          value: g=+$X?7'#jHn@Swu

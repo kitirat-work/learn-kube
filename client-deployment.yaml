@@ -1,0 +1,19 @@
+apiVersion: apps/v1 # version of the API we want to use
+kind: Deployment # kind of object we want to create
+metadata:
+  name: client-deployment # name of the object
+spec:
+  replicas: 1 # number of pods to create
+  selector:
+    matchLabels: # labels to match with the pods
+      component: web # label to identify the object
+  template: # template for the pods
+    metadata: # metadata for the pods
+      labels: # labels for the pods
+        component: web # label to identify the object
+    spec: 
+      containers:
+        - name: client # name of the container
+          image: stephengrider/multi-client # image to use
+          ports:
+            - containerPort: 3000 # port to expose from the container
