@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: database-persistent-volume-claim
+spec:
+  accessModes:
+    - ReadWriteOnce # it mean that only one pod can read and write to this volume
+  resources:
+    requests:
+      storage: 2Gi # it mean 2 gigabytes
